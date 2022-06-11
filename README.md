@@ -10,3 +10,10 @@ Useful scripts
 <code>pip3 install -r requirements.txt</code></br>
 Start scripts</br>
 <code>python3 autodelegate.py VALOPER_ADDRESS WALLET_ADDRESS PASSWORD_WALLET_ADDRESS></code></br>
+
+For start in handless mode.</br>
+<code>apt install screen</code></br>
+<code>screen -S autodelegate</code></br>
+<code>python3 autodelegate.py VALOPER_ADDRESS WALLET_ADDRESS PASSWORD_WALLET_ADDRESS></code></br>
+Exit in screen (CRTL + A + D)</br>
+Connect in screen (screen -X autodelegate)</br>
