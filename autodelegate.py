@@ -28,19 +28,16 @@ def get_balance():
 
 
 def delegate():
-    cmd = f"seid tx staking delegate {VALOPER} 500000usei --from {WALLET}"
+    cmd = f"seid tx staking delegate {VALOPER} 500000usei --from {WALLET} --fees 2000usei -y"
     child = spawn(cmd, timeout=5, encoding='utf-8')
     child.expect('(?i)pass')
     child.sendline(PASSWORD)
-
     print(child.after)
-    time.sleep(1)
-    child.sendline('y')
     child.interact()
 
 
 def claim_commision():
-    cmd = f"seid tx distribution withdraw-rewards {VALOPER} --from {WALLET} -y"
+    cmd = f"seid tx distribution withdraw-rewards {VALOPER} --from {WALLET} --fees 2000usei -y"
     child = spawn(cmd, timeout=5, encoding='utf-8')
     child.expect('(?i)pass')
     child.sendline(PASSWORD)
@@ -49,7 +46,7 @@ def claim_commision():
 
 
 def claim_reward():
-    cmd = f"seid tx distribution withdraw-all-rewards --from {WALLET} -y"
+    cmd = f"seid tx distribution withdraw-all-rewards --from {WALLET} --fees 2000usei -y"
     child = spawn(cmd, timeout=5, encoding='utf-8')
     child.expect('(?i)pass')
     child.sendline(PASSWORD)
